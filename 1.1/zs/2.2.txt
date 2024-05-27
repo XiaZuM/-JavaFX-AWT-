@@ -1,0 +1,32 @@
+数据库表结构
+假设我们创建一个名为 ClickDetails 的表，包含以下列：
+
+ClickTime: 记录点击事件发生的时间。它的格式为 "yyyy-MM-dd HH:mm"，表示年-月-日 时:分:秒。
+ClickDelay: 记录两次点击之间的间隔时间，单位是毫秒。
+ClickCount: 记录当前的点击次数。
+MaxClicks: 记录设置的最大点击次数，即程序应执行的总点击次数。
+RunTime: 记录自动点击器的总运行时间，单位是毫秒。
+XCoordinate: 记录点击时鼠标的X坐标。
+YCoordinate: 记录点击时鼠标的Y坐标。
+创建数据库和表
+使用以下 SQL 语句创建数据库和表：
+
+sql
+复制代码
+-- 创建数据库
+CREATE DATABASE AutoClickerDB;
+
+-- 切换到新创建的数据库
+USE AutoClickerDB;
+
+-- 创建表
+CREATE TABLE ClickDetails (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    ClickTime DATETIME NOT NULL,
+    ClickDelay INT NOT NULL,
+    ClickCount INT NOT NULL,
+    MaxClicks INT NOT NULL,
+    RunTime INT NOT NULL,
+    XCoordinate INT NOT NULL,
+    YCoordinate INT NOT NULL
+);
